@@ -1,0 +1,40 @@
+{
+  "name": "spotify-clone",
+  "version": "0.1.0",
+  "description": "Spotify Clone MVP using MERN Stack",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm start --workspace=server",
+    "client": "npm start --workspace=client",
+    "install:all": "npm install && npm install --workspace=client && npm install --workspace=server",
+    "build": "npm run build --workspace=client",
+    "version:patch": "npm version patch && npm version patch --workspace=client && npm version patch --workspace=server",
+    "version:minor": "npm version minor && npm version minor --workspace=client && npm version minor --workspace=server",
+    "version:major": "npm version major && npm version major --workspace=client && npm version major --workspace=server",
+    "update:changelog": "node scripts/update-changelog.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harleydi/spotify-clone.git"
+  },
+  "keywords": [
+    "spotify",
+    "music",
+    "mern",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
